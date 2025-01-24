@@ -7,7 +7,7 @@ public class CharacterController : MonoBehaviour
     public float accelerationSmoothingAir = 5.0f;
     public float speed = 2.5f;
     public float jumpForce = 5.0f;
-    private SpriteRenderer sr;
+    private SpriteRenderer characterSr;
     private Rigidbody2D rb;
     public Vector2 direction;
     public bool isOnFloor;
@@ -17,7 +17,7 @@ public class CharacterController : MonoBehaviour
 
     private void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        characterSr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         gunSr = gun.GetComponent<SpriteRenderer>();
     }
@@ -68,15 +68,31 @@ public class CharacterController : MonoBehaviour
     }
     private void FlipCharacter()
     {
-        if (direction.x > 0)
+        if (direction.x == 1)
         {
-            sr.flipX = true;
+            characterSr.flipX = true;
             gunSr.flipX = true;
         }
-        else if (direction.x < 0)
+        else if (direction.x == -1)
         {
-            sr.flipX = false;
+            characterSr.flipX = false;
             gunSr.flipX = false;
+        }
+        
+        
+        if (direction.y == 1)
+        {
+            if(characterSr.flipX) gun.transform.rotation = Quaternion.Euler(0, 0, 90);
+            else gun.transform.rotation = Quaternion.Euler(0, 0, -90);
+        }
+        else if (direction.y == -1)
+        {
+            if (characterSr.flipX) gun.transform.rotation = Quaternion.Euler(0, 0, -90);
+            else gun.transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
+        else
+        {
+            gun.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }
