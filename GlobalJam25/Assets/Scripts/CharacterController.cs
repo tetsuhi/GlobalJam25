@@ -1,6 +1,4 @@
 using System;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
@@ -11,7 +9,6 @@ public class CharacterController : MonoBehaviour
     public float jumpForce = 5.0f;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
-    private Vector2 targetVelocity;
     public Vector2 direction;
     public bool isOnFloor;
     public LayerMask groundMask;
@@ -23,7 +20,6 @@ public class CharacterController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         gunSr = gun.GetComponent<SpriteRenderer>();
-
     }
 
     void Update()
@@ -44,11 +40,14 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float accelerationSmoothing;
-        if (isOnFloor) accelerationSmoothing = accelerationSmoothingFloor;
-        else accelerationSmoothing = accelerationSmoothingAir;
-        rb.linearVelocity = new Vector2(Mathf.Lerp(rb.linearVelocity.x, direction.x * speed, 1 - Mathf.Exp(-Time.deltaTime * accelerationSmoothing)),
-            rb.linearVelocityY);
+        float accelerationSmoothing = isOnFloor ? accelerationSmoothingFloor : accelerationSmoothingAir;
+
+        rb.linearVelocity = new Vector2(
+            Mathf.Lerp(rb.linearVelocity.x, 
+            direction.x * speed, 
+            1 - Mathf.Exp(-Time.deltaTime * accelerationSmoothing)),
+            rb.linearVelocityY
+        );
     }
 
     private void CheckGround()
