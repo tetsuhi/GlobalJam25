@@ -30,7 +30,6 @@ public class CharacterController : MonoBehaviour
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (direction.x > 0) sr.flipX = true;
         else if (direction.x < 0) sr.flipX = false;
-        targetVelocity = direction * speed;
         
         if(Input.GetButtonDown("Jump") && isOnFloor)
         {
@@ -43,7 +42,8 @@ public class CharacterController : MonoBehaviour
         float accelerationSmoothing;
         if (isOnFloor) accelerationSmoothing = accelerationSmoothingFloor;
         else accelerationSmoothing = accelerationSmoothingAir;
-        rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, targetVelocity, 1 - Mathf.Exp(-Time.deltaTime * accelerationSmoothing));
+        rb.linearVelocity = new Vector2(Mathf.Lerp(rb.linearVelocity.x, direction.x * speed, 1 - Mathf.Exp(-Time.deltaTime * accelerationSmoothing)),
+            rb.linearVelocityY);
     }
 
     private void CheckGround()
