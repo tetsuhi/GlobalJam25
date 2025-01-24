@@ -55,8 +55,8 @@ public class CharacterController : MonoBehaviour
         float centerDistance = 0.39f;
         float distance = 0.4f;
 
-        Vector2 positionL = transform.position + Vector3.left * centerDistance - Vector3.up * 0.6f;
-        Vector2 positionR = transform.position + Vector3.right * centerDistance - Vector3.up * 0.6f;
+        Vector2 positionL = transform.position + Vector3.left * centerDistance + Vector3.up * 0.1f;
+        Vector2 positionR = transform.position + Vector3.right * centerDistance + Vector3.up * 0.1f;
 
         bool hit1 = Physics2D.Raycast(positionL, -Vector3.up, distance, groundMask);
         bool hit2 = Physics2D.Raycast(positionR, -Vector3.up, distance, groundMask);
