@@ -11,29 +11,34 @@ public class CharacterController : MonoBehaviour
     public float jumpForce = 5.0f;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
-    private BoxCollider2D bc;
     private Vector2 targetVelocity;
     public Vector2 direction;
     public bool isOnFloor;
     public LayerMask groundMask;
+    public GameObject gun;
+    private SpriteRenderer gunSr;
 
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        bc = GetComponent<BoxCollider2D>();
+        gunSr = gun.GetComponent<SpriteRenderer>();
+
     }
 
     void Update()
     {
         CheckGround();
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        if (direction.x > 0) sr.flipX = true;
-        else if (direction.x < 0) sr.flipX = false;
+        FlipCharacter();
         
         if(Input.GetButtonDown("Jump") && isOnFloor)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        }
+        if(Input.GetButtonDown("Fire1"))
+        {
+
         }
     }
 
@@ -61,5 +66,18 @@ public class CharacterController : MonoBehaviour
 
         Debug.DrawRay(positionL, -Vector3.up * distance, hit1 ? Color.green : Color.red);
         Debug.DrawRay(positionR, -Vector3.up * distance, hit2 ? Color.green : Color.red);
+    }
+    private void FlipCharacter()
+    {
+        if (direction.x > 0)
+        {
+            sr.flipX = true;
+            gunSr.flipX = true;
+        }
+        else if (direction.x < 0)
+        {
+            sr.flipX = false;
+            gunSr.flipX = false;
+        }
     }
 }

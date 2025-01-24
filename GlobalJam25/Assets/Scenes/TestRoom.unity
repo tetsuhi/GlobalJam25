@@ -1268,6 +1268,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 525760197324958214, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 1395042237}
+    - target: {fileID: 525760197324958214, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: gunSprite
+      value: 
+      objectReference: {fileID: 1395042237}
+    - target: {fileID: 2940408115426729272, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2940408115426729272, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397816318964801419, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397816318964801419, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397816318964801419, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397816318964801419, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397816318964801419, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397816318964801419, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3844310897707188567, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1489,6 +1529,11 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1395042237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8471991992981867621, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+  m_PrefabInstance: {fileID: 1081142012}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1419462924
 GameObject:
   m_ObjectHideFlags: 0
