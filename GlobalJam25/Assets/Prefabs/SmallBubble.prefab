@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1780839138612810123}
   - component: {fileID: 4515006706953805548}
   - component: {fileID: 5247140585995007432}
+  - component: {fileID: -3738555959265146274}
   m_Layer: 7
   m_Name: SmallBubble
   m_TagString: Bubble
@@ -48,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleLifeTime: 2
+  fastBubble: 0
+  bigBubble: 0
 --- !u!212 &1780839138612810123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -166,3 +169,25 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
+--- !u!95 &-3738555959265146274
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8208982700479201774}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bca190443b15953458856b4c6fed863a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

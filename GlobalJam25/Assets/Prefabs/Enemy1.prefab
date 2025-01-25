@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6704410162871217599}
   - component: {fileID: 2968317335668240496}
+  - component: {fileID: 6587649997164515565}
   m_Layer: 8
   m_Name: Bubble
   m_TagString: Untagged
@@ -154,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 5504650190715434783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.39999962, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -215,6 +216,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6587649997164515565
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5504650190715434783}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b73c677f4377c64f9af72ba71fe36cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5651308081707963259
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +290,10 @@ MonoBehaviour:
   - {fileID: 8942674703013190388}
   - {fileID: 2380959740952464939}
   speed: 2
+  trapped: 0
   bubbleSP: {fileID: 2968317335668240496}
+  bubbleAnimator: {fileID: 6587649997164515565}
+  bigEnemy: 0
 --- !u!212 &1680858951893662750
 SpriteRenderer:
   m_ObjectHideFlags: 0

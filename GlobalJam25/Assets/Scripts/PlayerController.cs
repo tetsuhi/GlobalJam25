@@ -297,8 +297,7 @@ public class PlayerController : MonoBehaviour
         {
             if (collision.GetComponent<Rigidbody2D>().linearVelocity == Vector2.zero)
             {
-                Destroy(collision.gameObject);
-                AudioManager.instance.PlayBubble();
+                collision.GetComponent<BubbleTimer>().DestroyAnim();
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, bubbleForce);
                 AudioManager.instance.PlayJump();
             }
