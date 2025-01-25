@@ -53,6 +53,8 @@ public class Enemy : MonoBehaviour
         bubbleSP.enabled = true;
         animator.Play("Hit");
 
+        AudioManager.instance.PlayBubble();
+
         StartCoroutine(BreakFree());
     }
 
@@ -69,12 +71,14 @@ public class Enemy : MonoBehaviour
         bubbleSP.enabled = false;
         animator.Play("Idle");
 
+        AudioManager.instance.PlayBubble();
+
         StopAllCoroutines();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bubble"))
+        if (collision.CompareTag("Bubble") && !trapped)
         {
             Destroy(collision.gameObject);
             Trap();

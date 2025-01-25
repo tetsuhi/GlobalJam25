@@ -11,6 +11,10 @@ public class AudioManager : MonoBehaviour
     private AudioSource mAudioSource;
 
     public AudioClip click;
+    public AudioClip bubble;
+    public AudioClip jump;
+    public AudioClip land;
+    public AudioClip hit;
 
     private void Awake()
     {
@@ -59,6 +63,31 @@ public class AudioManager : MonoBehaviour
 
     public void PlayClick()
     {
+        mAudioSource.pitch = Random.Range(0.8f, 1.2f);
         mAudioSource.PlayOneShot(click);
+    }
+
+    public void PlayBubble()
+    {
+        mAudioSource.pitch = Random.Range(0.8f, 1.2f);
+        mAudioSource.PlayOneShot(bubble);
+    }
+
+    public void PlayJump()
+    {
+        mAudioSource.pitch = Random.Range(0.8f, 1.2f);
+        mAudioSource.PlayOneShot(jump);
+    }
+
+    public void PlayLand()
+    {
+        mAudioSource.pitch = Random.Range(0.8f, 1.2f);
+        mAudioSource.PlayOneShot(land);
+    }
+
+    public void PlayHit()
+    {
+        mAudioSource.pitch = Random.Range(0.8f, 1.2f);
+        mAudioSource.PlayOneShot(hit);
     }
 }

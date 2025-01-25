@@ -16,6 +16,10 @@ public class BubbleTimer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collision.CompareTag("Enemy")) Destroy(gameObject);
+        if (!collision.CompareTag("Enemy"))
+        {
+            AudioManager.instance.PlayBubble();
+            Destroy(gameObject);
+        }
     }
 }

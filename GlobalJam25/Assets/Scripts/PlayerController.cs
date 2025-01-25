@@ -63,9 +63,10 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonDown("Jump") && coyoteJump)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            AudioManager.instance.PlayJump();
         }
 
-        if(Input.GetButtonDown("Fire1") && !bubbleCooldown)
+        if (Input.GetButtonDown("Fire1") && !bubbleCooldown)
         {
             ShootBubble();        
         }
@@ -96,7 +97,10 @@ public class PlayerController : MonoBehaviour
         bool hit1 = Physics2D.Raycast(positionL, -Vector3.up, distance, groundMask);
         bool hit2 = Physics2D.Raycast(positionR, -Vector3.up, distance, groundMask);
 
+        bool wasGrounded = isOnFloor;
         isOnFloor = hit1 || hit2;
+
+        if(!wasGrounded && isOnFloor) AudioManager.instance.PlayLand();
 
         Debug.DrawRay(positionL, -Vector3.up * distance, hit1 ? Color.green : Color.red);
         Debug.DrawRay(positionR, -Vector3.up * distance, hit2 ? Color.green : Color.red);
@@ -152,7 +156,9 @@ public class PlayerController : MonoBehaviour
     private void ShootBubble()
     {
         bubbleCooldown = true;
-        Invoke("BubbleReady", 0.4f); ;
+        Invoke("BubbleReady", 0.4f);
+
+        AudioManager.instance.PlayBubble();
 
         var bubble = Instantiate(smallBubble, transform.position + new Vector3(0, 0.4f, 0), transform.rotation, transform);
         bubble.transform.parent = null;
@@ -219,11 +225,14 @@ public class PlayerController : MonoBehaviour
 
             if(enemy.trapped)
             {
+                AudioManager.instance.PlayJump();
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, bubbleForce);
                 return;
             }
 
             if (beenHit) return;
+
+            AudioManager.instance.PlayHit();
 
             beenHit = true;
             uncontrollable = true;
@@ -252,10 +261,14 @@ public class PlayerController : MonoBehaviour
         {
             aux += 1;
             characterSr.enabled = aux % 2 == 0;
+            gunSr.enabled = aux % 2 == 0;
             yield return new WaitForSeconds(0.1f);
 
             if(aux > 5) uncontrollable = false;
         }
+
+        characterSr.enabled = true;
+        gunSr.enabled = true;
 
         beenHit = false;
     }
