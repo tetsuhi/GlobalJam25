@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer characterSr;
     private Rigidbody2D rb;
 
-    private Vector2 direction;
+    public Vector2 direction;
     private bool isOnFloor;
     private bool coyoteJump;
     private float coyoteJumpTime = 0.1f;
@@ -52,7 +52,11 @@ public class PlayerController : MonoBehaviour
 
         if (uncontrollable) return;
 
-        direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        direction = new Vector2(
+            Input.GetAxisRaw("Horizontal") > 0.1f ? 1 : (Input.GetAxisRaw("Horizontal") < -0.1f ? -1 : 0),
+            Input.GetAxisRaw("Vertical") > 0.1f ? 1 : (Input.GetAxisRaw("Vertical") < -0.1f ? -1 : 0)
+        );
+
         FlipCharacter();
         Animations();
         
