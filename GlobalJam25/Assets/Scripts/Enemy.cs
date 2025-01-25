@@ -92,11 +92,21 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Bubble") && !trapped)
         {
-            bool bigBubble = collision.GetComponent<BubbleTimer>().bigBubble;
+            BubbleTimer bubble = collision.GetComponent<BubbleTimer>();
 
-            bool longTime = collision.GetComponent<BubbleTimer>().fastBubble;
-            Destroy(collision.gameObject);
-            Trap(longTime);
+            bool bigBubble = bubble.bigBubble;
+
+            bool longTime = bubble.fastBubble;
+
+            if (bigEnemy && !bigBubble)
+            {
+                bubble.DestroyAnim();
+            }
+            else
+            {
+                Destroy(collision.gameObject);
+                Trap(longTime);
+            }
         }
 
         else if (collision.CompareTag("Player") && trapped)
