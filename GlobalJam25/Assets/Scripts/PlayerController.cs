@@ -93,6 +93,7 @@ public class PlayerController : MonoBehaviour
             {
                 ShootBubble(chargeShoot);
                 StopAllCoroutines();
+                gunSr.color = Color.white;
                 chargeShoot = false;
             }
         }
@@ -343,7 +344,20 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator ChargeBubble()
     {
-        yield return new WaitForSeconds(chargeTime);
+        float elapsedTime = 0f;
+        bool isRed = false;
+
+        while (elapsedTime < chargeTime)
+        {
+            gunSr.color = isRed ? Color.red : Color.white;
+            isRed = !isRed;
+
+            yield return new WaitForSeconds(0.2f);
+            elapsedTime += 0.2f;
+        }
+
+        gunSr.color = Color.red;
         chargeShoot = true;
     }
+
 }

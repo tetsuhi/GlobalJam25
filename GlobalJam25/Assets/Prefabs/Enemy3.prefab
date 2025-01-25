@@ -291,7 +291,7 @@ MonoBehaviour:
   trapped: 0
   bubbleSP: {fileID: 2968317335668240496}
   bubbleAnimator: {fileID: 6587649997164515565}
-  bigEnemy: 0
+  bigEnemy: 1
 --- !u!212 &1680858951893662750
 SpriteRenderer:
   m_ObjectHideFlags: 0
