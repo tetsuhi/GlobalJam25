@@ -157,11 +157,15 @@ public class PlayerController : MonoBehaviour
         {
             bubble.transform.position += Vector3.up * 0.5f;
             bubbleRb.linearVelocity = new Vector2(0, bubbleVelocity);
+
+            bubbleRb.linearVelocityX += rb.linearVelocityX / 5;
         }
         else if (direction.y == -1)
         {
             bubble.transform.position -= Vector3.up * 0.5f;
             bubbleRb.linearVelocity = new Vector2(0, -bubbleVelocity);
+
+            bubbleRb.linearVelocityX += rb.linearVelocityX / 5;
         }
         else
         {
@@ -175,8 +179,9 @@ public class PlayerController : MonoBehaviour
                 bubble.transform.position -= Vector3.right * 0.5f;
                 bubbleRb.linearVelocity = new Vector2(-bubbleVelocity, 0);
             }
+
+            bubbleRb.linearVelocityY += rb.linearVelocityY / 5;
         }
-        bubbleRb.linearVelocity += rb.linearVelocity / 3;
     }
 
     private void Animations()
