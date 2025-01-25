@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &144702912548787251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155501375088316329}
+  m_Layer: 3
+  m_Name: CameraFollow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &155501375088316329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144702912548787251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3844310897707188567}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5393467514271230328
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,6 +44,7 @@ GameObject:
   - component: {fileID: 2395169870429089307}
   - component: {fileID: 4127878935890683773}
   - component: {fileID: 7590487006285954419}
+  - component: {fileID: 829933119752086531}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -34,6 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3397816318964801419}
+  - {fileID: 155501375088316329}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &525760197324958214
@@ -48,18 +81,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39a26bbabf286c479311d5bd63c8ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationSmoothingFloor: 20
-  accelerationSmoothingAir: 5
-  speed: 6
-  jumpForce: 10
-  direction: {x: 0, y: 0}
-  isOnFloor: 0
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   gun: {fileID: 8471991992981867621}
   smallBubble: {fileID: 8208982700479201774, guid: a7b88272ac52cb349bb15f1e207142be, type: 3}
   bubbleVelocity: 2.5
+  cameraFollow: {fileID: 0}
 --- !u!212 &2395169870429089307
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -188,6 +216,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8, y: 0.98}
   m_EdgeRadius: 0
+--- !u!95 &829933119752086531
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393467514271230328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3bd46a31dadd5e14f8535646248bf591, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8471991992981867621
 GameObject:
   m_ObjectHideFlags: 0
