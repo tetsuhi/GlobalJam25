@@ -47,7 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicMixer: {fileID: 24100000, guid: 79ea0cbee7c347d44ab1c5768fa5265c, type: 2}
   soundMixer: {fileID: 24100000, guid: db23668ff0f85354d9937d8b8d599bda, type: 2}
-  click: {fileID: 8300000, guid: 9f0cf43e5ca671345b13757e22f60635, type: 3}
+  click: {fileID: 8300000, guid: b5c07c96e4e207b4088daa9d488d2eea, type: 3}
+  bubble: {fileID: 8300000, guid: e5f3df26d5e0f3b449883a2a7f5c3056, type: 3}
+  jump: {fileID: 8300000, guid: 34a9b1646ccd8ab4abf9b30f904b2f1b, type: 3}
+  land: {fileID: 8300000, guid: 8ca16f783683b244898bfc808e8add84, type: 3}
+  hit: {fileID: 8300000, guid: 1861889c4f368df45bc76382842da432, type: 3}
 --- !u!82 &838197089335838674
 AudioSource:
   m_ObjectHideFlags: 0
