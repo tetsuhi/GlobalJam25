@@ -5,6 +5,7 @@ public class BubbleTimer : MonoBehaviour
     public float bubbleLifeTime = 2.0f;
 
     public bool fastBubble;
+    public bool bigBubble;
 
     private void OnEnable()
     {
