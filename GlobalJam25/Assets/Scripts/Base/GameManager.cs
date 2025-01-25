@@ -62,7 +62,8 @@ public class GameManager : MonoBehaviour
     public void LoadNextLevel()
     {
         int index = SceneManager.GetActiveScene().buildIndex;
-        if(index == 3) SceneManager.LoadScene(0);
-        else SceneManager.LoadScene(index++);
+        if (index == 1) SceneManager.LoadScene(2);
+        else if (index == 2) SceneManager.LoadScene(3);
+        else SceneManager.LoadScene(0);
     }
 }
