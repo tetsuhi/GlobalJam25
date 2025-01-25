@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 681953621060379286}
   - component: {fileID: 6414307752200467738}
-  - component: {fileID: 3054322528913094702}
   - component: {fileID: 1780839138612810123}
   - component: {fileID: 4515006706953805548}
   - component: {fileID: 5247140585995007432}
@@ -49,24 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleLifeTime: 2
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &3054322528913094702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8208982700479201774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac15e0eb72a2ce7478e3e3d1eb274b3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!212 &1780839138612810123
 SpriteRenderer:
   m_ObjectHideFlags: 0

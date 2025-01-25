@@ -58,7 +58,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   gun: {fileID: 8471991992981867621}
-  smallBubble: {fileID: 0}
+  smallBubble: {fileID: 8208982700479201774, guid: a7b88272ac52cb349bb15f1e207142be, type: 3}
+  bubbleVelocity: 2.5
 --- !u!212 &2395169870429089307
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -102,7 +103,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 580778349
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 707355854, guid: 83631a9eec4f18946be789faa0f03faf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -262,7 +263,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 580778349
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: -1827243586, guid: 83631a9eec4f18946be789faa0f03faf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
