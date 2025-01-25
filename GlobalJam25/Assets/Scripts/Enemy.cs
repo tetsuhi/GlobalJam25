@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     private Animator animator;
 
     public bool trapped;
-    private float trappedCooldown = 5f;
+    private float trappedCooldown = 6.5f;
 
     public SpriteRenderer bubbleSP;
 

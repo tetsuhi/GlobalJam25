@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private float accelerationSmoothingAir = 5.0f;
     private float speed = 6f;
     private float jumpForce = 10f;
-    private float bubbleForce = 12f;
+    private float bubbleForce = 13f;
 
     private SpriteRenderer characterSr;
     private Rigidbody2D rb;
@@ -231,6 +231,11 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(collisionDirection * 5f, ForceMode2D.Impulse);
 
             StartCoroutine(Hit());
+        }
+
+        if (collision.CompareTag("Flag"))
+        {
+            gameManager.LoadNextLevel();
         }
     }
 

@@ -58,4 +58,11 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void LoadNextLevel()
+    {
+        int index = SceneManager.GetActiveScene().buildIndex;
+        if(index == 3) SceneManager.LoadScene(0);
+        else SceneManager.LoadScene(index++);
+    }
 }
