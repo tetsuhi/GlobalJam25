@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2395169870429089307}
   - component: {fileID: 4127878935890683773}
   - component: {fileID: 7590487006285954419}
-  - component: {fileID: 1194753852291069747}
+  - component: {fileID: 6513759317657191864}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -81,12 +81,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39a26bbabf286c479311d5bd63c8ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   gun: {fileID: 8471991992981867621}
   smallBubble: {fileID: 8208982700479201774, guid: a7b88272ac52cb349bb15f1e207142be, type: 3}
-  bubbleVelocity: 2
+  bubbleVelocity: 2.5
+  bubbleSlowVelocity: 2.5
+  bubbleFastVelocity: 10
+  powerUp1: 0
   cameraFollow: {fileID: 144702912548787251}
 --- !u!212 &2395169870429089307
 SpriteRenderer:
@@ -216,7 +220,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8, y: 0.98}
   m_EdgeRadius: 0
---- !u!95 &1194753852291069747
+--- !u!95 &6513759317657191864
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

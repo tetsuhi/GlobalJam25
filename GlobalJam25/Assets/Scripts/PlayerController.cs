@@ -25,7 +25,11 @@ public class PlayerController : MonoBehaviour
 
     public GameObject smallBubble;
     public float bubbleVelocity;
+    public float bubbleSlowVelocity = 2.5f;
+    public float bubbleFastVelocity = 10f;
     private bool bubbleCooldown;
+
+    public bool powerUp1;
 
     private GameManager gameManager;
     public GameObject cameraFollow;
@@ -44,6 +48,8 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         gameManager = FindFirstObjectByType<GameManager>();
+
+        bubbleVelocity = bubbleSlowVelocity;
     }
 
     void Update()
@@ -163,19 +169,16 @@ public class PlayerController : MonoBehaviour
         var bubble = Instantiate(smallBubble, transform.position + new Vector3(0, 0.4f, 0), transform.rotation, transform);
         bubble.transform.parent = null;
         Rigidbody2D bubbleRb = bubble.GetComponent<Rigidbody2D>();
+        bubble.GetComponent<BubbleTimer>().fastBubble = powerUp1;
         if (direction.y == 1)
         {
             bubble.transform.position += Vector3.up * 0.5f;
             bubbleRb.linearVelocity = new Vector2(0, bubbleVelocity);
-
-            bubbleRb.linearVelocityX += rb.linearVelocityX / 5;
         }
         else if (direction.y == -1)
         {
             bubble.transform.position -= Vector3.up * 0.5f;
             bubbleRb.linearVelocity = new Vector2(0, -bubbleVelocity);
-
-            bubbleRb.linearVelocityX += rb.linearVelocityX / 5;
         }
         else
         {
@@ -189,8 +192,6 @@ public class PlayerController : MonoBehaviour
                 bubble.transform.position -= Vector3.right * 0.5f;
                 bubbleRb.linearVelocity = new Vector2(-bubbleVelocity, 0);
             }
-
-            bubbleRb.linearVelocityY += rb.linearVelocityY / 5;
         }
     }
 
@@ -223,12 +224,16 @@ public class PlayerController : MonoBehaviour
         {
             Enemy enemy = collision.GetComponent<Enemy>();
 
-            if(enemy.trapped)
+            try
             {
-                AudioManager.instance.PlayJump();
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, bubbleForce);
-                return;
+                if (enemy.trapped)
+                {
+                    AudioManager.instance.PlayJump();
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, bubbleForce);
+                    return;
+                }
             }
+            catch { }
 
             if (beenHit) return;
 
@@ -250,6 +255,19 @@ public class PlayerController : MonoBehaviour
         {
             gameManager.LoadNextLevel();
         }
+
+        if (collision.CompareTag("PowerUp1"))
+        {
+            ActivePowerUp1();
+            AudioManager.instance.PlayPickUp();
+            Destroy(collision.gameObject);
+        }
+    }
+
+    public void ActivePowerUp1()
+    {
+        bubbleVelocity = bubbleFastVelocity;
+        powerUp1 = true;
     }
 
     private IEnumerator Hit()

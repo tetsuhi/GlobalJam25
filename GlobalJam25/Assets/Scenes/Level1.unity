@@ -69736,30 +69736,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 838197089335838674, guid: 5513755385c7add4abbb8670a6eed1d3, type: 3}
-      propertyPath: m_Pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1480051471901844487, guid: 5513755385c7add4abbb8670a6eed1d3, type: 3}
-      propertyPath: hit
-      value: 
-      objectReference: {fileID: 8300000, guid: 1861889c4f368df45bc76382842da432, type: 3}
-    - target: {fileID: 1480051471901844487, guid: 5513755385c7add4abbb8670a6eed1d3, type: 3}
-      propertyPath: jump
-      value: 
-      objectReference: {fileID: 8300000, guid: 34a9b1646ccd8ab4abf9b30f904b2f1b, type: 3}
-    - target: {fileID: 1480051471901844487, guid: 5513755385c7add4abbb8670a6eed1d3, type: 3}
-      propertyPath: land
-      value: 
-      objectReference: {fileID: 8300000, guid: 8ca16f783683b244898bfc808e8add84, type: 3}
-    - target: {fileID: 1480051471901844487, guid: 5513755385c7add4abbb8670a6eed1d3, type: 3}
-      propertyPath: click
-      value: 
-      objectReference: {fileID: 8300000, guid: b5c07c96e4e207b4088daa9d488d2eea, type: 3}
-    - target: {fileID: 1480051471901844487, guid: 5513755385c7add4abbb8670a6eed1d3, type: 3}
-      propertyPath: bubble
-      value: 
-      objectReference: {fileID: 8300000, guid: e5f3df26d5e0f3b449883a2a7f5c3056, type: 3}
     - target: {fileID: 7450786234961580906, guid: 5513755385c7add4abbb8670a6eed1d3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

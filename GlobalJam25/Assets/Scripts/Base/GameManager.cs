@@ -11,9 +11,14 @@ public class GameManager : MonoBehaviour
 
     public int currentHp;
 
+    private PlayerController playerController;
+
     private void Start()
     {
         UpdateHp(6);
+        playerController = FindFirstObjectByType<PlayerController>();
+
+        if(SceneManager.GetActiveScene().buildIndex == 3) playerController.ActivePowerUp1();
     }
 
     public void QuitGame()

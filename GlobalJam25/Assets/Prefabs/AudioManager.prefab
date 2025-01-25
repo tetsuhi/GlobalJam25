@@ -52,6 +52,7 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: 34a9b1646ccd8ab4abf9b30f904b2f1b, type: 3}
   land: {fileID: 8300000, guid: 8ca16f783683b244898bfc808e8add84, type: 3}
   hit: {fileID: 8300000, guid: 1861889c4f368df45bc76382842da432, type: 3}
+  pickUp: {fileID: 8300000, guid: 3cf344030fc4417489d33ca771ea30fb, type: 3}
 --- !u!82 &838197089335838674
 AudioSource:
   m_ObjectHideFlags: 0

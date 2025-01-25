@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip jump;
     public AudioClip land;
     public AudioClip hit;
+    public AudioClip pickUp;
 
     private void Awake()
     {
@@ -89,5 +90,11 @@ public class AudioManager : MonoBehaviour
     {
         mAudioSource.pitch = Random.Range(0.8f, 1.2f);
         mAudioSource.PlayOneShot(hit);
+    }
+
+    public void PlayPickUp()
+    {
+        mAudioSource.pitch = Random.Range(0.8f, 1.2f);
+        mAudioSource.PlayOneShot(pickUp);
     }
 }

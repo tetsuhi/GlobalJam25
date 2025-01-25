@@ -13,7 +13,8 @@ public class Enemy : MonoBehaviour
     private Animator animator;
 
     public bool trapped;
-    private float trappedCooldown = 5f;
+    private float trappedCooldown1 = 5f;
+    private float trappedCooldown2 = 10f;
 
     public SpriteRenderer bubbleSP;
 
@@ -47,7 +48,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Trap()
+    private void Trap(bool slowTime)
     {
         trapped = true;
         bubbleSP.enabled = true;
@@ -55,12 +56,19 @@ public class Enemy : MonoBehaviour
 
         AudioManager.instance.PlayBubble();
 
-        StartCoroutine(BreakFree());
+        if(slowTime) StartCoroutine(BreakFreeSlow());
+        else StartCoroutine(BreakFreeFast());
     }
 
-    private IEnumerator BreakFree()
+    private IEnumerator BreakFreeFast()
     {
-        yield return new WaitForSeconds(trappedCooldown);
+        yield return new WaitForSeconds(trappedCooldown1);
+
+        UnTrap();
+    }
+    private IEnumerator BreakFreeSlow()
+    {
+        yield return new WaitForSeconds(trappedCooldown2);
 
         UnTrap();
     }
@@ -80,8 +88,9 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Bubble") && !trapped)
         {
+            bool longTime = collision.GetComponent<BubbleTimer>().fastBubble;
             Destroy(collision.gameObject);
-            Trap();
+            Trap(longTime);
         }
 
         else if (collision.CompareTag("Player") && trapped)
