@@ -24,12 +24,16 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer gunSr;
 
     public GameObject smallBubble;
+    public GameObject bigBubble;
     public float bubbleVelocity;
     public float bubbleSlowVelocity = 2.5f;
     public float bubbleFastVelocity = 10f;
     private bool bubbleCooldown;
+    public float chargeTime = 2f;
+    public bool chargeShoot;
 
     public bool powerUp1;
+    public bool powerUp2;
 
     private GameManager gameManager;
     public GameObject cameraFollow;
@@ -72,9 +76,25 @@ public class PlayerController : MonoBehaviour
             AudioManager.instance.PlayJump();
         }
 
-        if (Input.GetButtonDown("Fire1") && !bubbleCooldown)
+        if (!powerUp2)
         {
-            ShootBubble();        
+            if (Input.GetButtonDown("Fire1") && !bubbleCooldown)
+            {
+                ShootBubble(false);
+            }
+        }
+        else
+        {
+            if(Input.GetButtonDown("Fire1") && !bubbleCooldown)
+            {
+                StartCoroutine(ChargeBubble());
+            }
+            else if(Input.GetButtonUp("Fire1") && !bubbleCooldown)
+            {
+                ShootBubble(chargeShoot);
+                StopAllCoroutines();
+                chargeShoot = false;
+            }
         }
     }
 
@@ -159,17 +179,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void ShootBubble()
+    private void ShootBubble(bool charge)
     {
         bubbleCooldown = true;
         Invoke("BubbleReady", 0.4f);
 
         AudioManager.instance.PlayBubble();
 
-        var bubble = Instantiate(smallBubble, transform.position + new Vector3(0, 0.4f, 0), transform.rotation, transform);
+        GameObject bubbleGO = charge ? bigBubble : smallBubble;
+
+        var bubble = Instantiate(bubbleGO, transform.position + new Vector3(0, 0.4f, 0), transform.rotation, transform);
         bubble.transform.parent = null;
         Rigidbody2D bubbleRb = bubble.GetComponent<Rigidbody2D>();
         bubble.GetComponent<BubbleTimer>().fastBubble = powerUp1;
+        bubble.GetComponent<BubbleTimer>().bigBubble = charge;
         if (direction.y == 1)
         {
             bubble.transform.position += Vector3.up * 0.5f;
@@ -262,12 +285,35 @@ public class PlayerController : MonoBehaviour
             AudioManager.instance.PlayPickUp();
             Destroy(collision.gameObject);
         }
+
+        if (collision.CompareTag("PowerUp2"))
+        {
+            ActivePowerUp2();
+            AudioManager.instance.PlayPickUp();
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.CompareTag("Bubble"))
+        {
+            if (collision.GetComponent<Rigidbody2D>().linearVelocity == Vector2.zero)
+            {
+                Destroy(collision.gameObject);
+                AudioManager.instance.PlayBubble();
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, bubbleForce);
+                AudioManager.instance.PlayJump();
+            }
+        }
     }
 
     public void ActivePowerUp1()
     {
         bubbleVelocity = bubbleFastVelocity;
         powerUp1 = true;
+    }
+
+    public void ActivePowerUp2()
+    {
+        powerUp2 = true;
     }
 
     private IEnumerator Hit()
@@ -294,5 +340,11 @@ public class PlayerController : MonoBehaviour
     private void BubbleReady()
     {
         bubbleCooldown = false;
+    }
+
+    private IEnumerator ChargeBubble()
+    {
+        yield return new WaitForSeconds(chargeTime);
+        chargeShoot = true;
     }
 }

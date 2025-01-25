@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BubbleTimer : MonoBehaviour
 {
-    public float bubbleLifeTime = 2.0f;
+    public float bubbleLifeTime = 4.0f;
 
     public bool fastBubble;
     public bool bigBubble;
@@ -19,10 +19,17 @@ public class BubbleTimer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Enemy"))
+        if (!collision.CompareTag("Enemy") && !collision.CompareTag("Player"))
         {
-            AudioManager.instance.PlayBubble();
-            Destroy(gameObject);
+            if(bigBubble)
+            {
+                GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+            }
+            else
+            {
+                AudioManager.instance.PlayBubble();
+                Destroy(gameObject);
+            }
         }
     }
 }
