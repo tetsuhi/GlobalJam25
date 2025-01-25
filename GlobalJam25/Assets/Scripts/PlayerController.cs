@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using Unity.Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject gun;
     private SpriteRenderer gunSr;
+    public Sprite gun1;
+    public Sprite gun2;
 
     public GameObject smallBubble;
     public GameObject bigBubble;
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
             {
                 ShootBubble(chargeShoot);
                 StopAllCoroutines();
-                gunSr.color = Color.white;
+                gunSr.sprite = gun1;
                 chargeShoot = false;
             }
         }
@@ -345,19 +345,18 @@ public class PlayerController : MonoBehaviour
     private IEnumerator ChargeBubble()
     {
         float elapsedTime = 0f;
-        bool isRed = false;
+        bool blink = false;
 
         while (elapsedTime < chargeTime)
         {
-            gunSr.color = isRed ? Color.red : Color.white;
-            isRed = !isRed;
+            gunSr.sprite = blink ? gun2 : gun1;
+            blink = !blink;
 
             yield return new WaitForSeconds(0.2f);
             elapsedTime += 0.2f;
         }
 
-        gunSr.color = Color.red;
+        gunSr.sprite = gun2;
         chargeShoot = true;
     }
-
 }

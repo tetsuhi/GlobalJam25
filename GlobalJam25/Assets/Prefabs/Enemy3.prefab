@@ -286,8 +286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7da77e2b55d62540b1c53431c477a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: []
-  speed: 0
+  points:
+  - {fileID: 8942674703013190388}
+  - {fileID: 2380959740952464939}
+  speed: 2
   trapped: 0
   bubbleSP: {fileID: 2968317335668240496}
   bubbleAnimator: {fileID: 6587649997164515565}

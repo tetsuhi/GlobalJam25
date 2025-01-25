@@ -86,11 +86,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   gun: {fileID: 8471991992981867621}
+  gun1: {fileID: -1827243586, guid: 83631a9eec4f18946be789faa0f03faf, type: 3}
+  gun2: {fileID: -404836882, guid: 83631a9eec4f18946be789faa0f03faf, type: 3}
   smallBubble: {fileID: 8208982700479201774, guid: a7b88272ac52cb349bb15f1e207142be, type: 3}
+  bigBubble: {fileID: 8208982700479201774, guid: 123d5a27c4a377c4d92515bd47a32f5b, type: 3}
   bubbleVelocity: 2.5
   bubbleSlowVelocity: 2.5
   bubbleFastVelocity: 10
+  chargeTime: 2
+  chargeShoot: 0
   powerUp1: 0
+  powerUp2: 0
   cameraFollow: {fileID: 144702912548787251}
 --- !u!212 &2395169870429089307
 SpriteRenderer:
