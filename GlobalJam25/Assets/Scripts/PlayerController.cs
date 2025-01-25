@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 direction;
     private bool isOnFloor;
+    private bool coyoteJump;
+    private float coyoteJumpTime = 0.1f;
     public LayerMask groundMask;
 
     public GameObject gun;
@@ -54,7 +56,7 @@ public class PlayerController : MonoBehaviour
         FlipCharacter();
         Animations();
         
-        if(Input.GetButtonDown("Jump") && isOnFloor)
+        if(Input.GetButtonDown("Jump") && coyoteJump)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
@@ -94,6 +96,20 @@ public class PlayerController : MonoBehaviour
 
         Debug.DrawRay(positionL, -Vector3.up * distance, hit1 ? Color.green : Color.red);
         Debug.DrawRay(positionR, -Vector3.up * distance, hit2 ? Color.green : Color.red);
+
+        if (!isOnFloor)
+        {
+            Invoke("DisableCoyoteJump", coyoteJumpTime);
+        }
+        else
+        {
+            coyoteJump = true;
+        }
+    }
+
+    private void DisableCoyoteJump()
+    {
+        coyoteJump = false;
     }
 
     private void FlipCharacter()
