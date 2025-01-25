@@ -58,6 +58,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   gun: {fileID: 8471991992981867621}
+  smallBubble: {fileID: 0}
 --- !u!212 &2395169870429089307
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -177,7 +178,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.07}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1.1111112, y: 1.3333334}
     newSize: {x: 1.375, y: 1.4375}
     adaptiveTilingThreshold: 0.5
@@ -261,7 +262,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 580778349
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1827243586, guid: 83631a9eec4f18946be789faa0f03faf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

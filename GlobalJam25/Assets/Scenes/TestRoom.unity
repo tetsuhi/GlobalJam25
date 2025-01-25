@@ -1499,7 +1499,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1021361916}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1541,9 +1541,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 525760197324958214, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: smallBubble
+      value: 
+      objectReference: {fileID: 8208982700479201774, guid: a7b88272ac52cb349bb15f1e207142be, type: 3}
+    - target: {fileID: 525760197324958214, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: bubbleVelocity
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2940408115426729272, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3397816318964801419, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397816318964801419, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397816318964801419, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397816318964801419, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397816318964801419, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3844310897707188567, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
       propertyPath: m_LocalPosition.x

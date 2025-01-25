@@ -14,6 +14,8 @@ public class CharacterController : MonoBehaviour
     public LayerMask groundMask;
     public GameObject gun;
     private SpriteRenderer gunSr;
+    public GameObject smallBubble;
+    public float bubbleVelocity;
 
     private void Start()
     {
@@ -34,7 +36,33 @@ public class CharacterController : MonoBehaviour
         }
         if(Input.GetButtonDown("Fire1"))
         {
-
+            var bubble = Instantiate(smallBubble, transform.position + new Vector3(0, 0.4f, 0), transform.rotation, transform);
+            bubble.transform.parent = null;
+            Rigidbody2D bubbleRb = bubble.GetComponent<Rigidbody2D>();
+            if (direction.y == 1)
+            {
+                bubble.transform.position += Vector3.up * 0.5f;
+                bubbleRb.linearVelocity = new Vector2(0, bubbleVelocity);
+            }
+            else if(direction.y == -1)
+            {
+                bubble.transform.position -= Vector3.up * 0.5f;
+                bubbleRb.linearVelocity = new Vector2(0, -bubbleVelocity);
+            }
+            else
+            {
+                if(characterSr.flipX)
+                {
+                    bubble.transform.position += Vector3.right * 0.5f;
+                    bubbleRb.linearVelocity = new Vector2(bubbleVelocity, 0);
+                }
+                else
+                {
+                    bubble.transform.position -= Vector3.right * 0.5f;
+                    bubbleRb.linearVelocity = new Vector2(-bubbleVelocity, 0);
+                }
+            }
+            bubbleRb.linearVelocity += rb.linearVelocity/3;
         }
     }
 
