@@ -4259,6 +4259,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 155501375088316329, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
   m_PrefabInstance: {fileID: 506297424}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &506297428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 525760197324958214, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
+  m_PrefabInstance: {fileID: 506297424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609201631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39a26bbabf286c479311d5bd63c8ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &506566184
 GameObject:
   m_ObjectHideFlags: 0
@@ -67735,6 +67746,7 @@ MonoBehaviour:
   - {fileID: 7969752024136316262, guid: 1870215357af7f24785be2115a03beac, type: 3}
   closeButton: {fileID: 1407011394}
   currentHp: 0
+  playerController: {fileID: 506297428}
 --- !u!82 &1805881997
 AudioSource:
   m_ObjectHideFlags: 0

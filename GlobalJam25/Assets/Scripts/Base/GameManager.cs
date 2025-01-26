@@ -13,8 +13,6 @@ public class GameManager : MonoBehaviour
 
     public int currentHp;
 
-    private PlayerController playerController;
-
     private bool pause;
 
     private void Start()
@@ -22,9 +20,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
 
         UpdateHp(6);
-        playerController = FindFirstObjectByType<PlayerController>();
-
-        if(SceneManager.GetActiveScene().buildIndex == 3) playerController.ActivePowerUp1();
     }
 
     private void Update()

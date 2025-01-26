@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public GameObject bigBubble;
     public float bubbleVelocity;
     public float bubbleSlowVelocity = 2.5f;
-    public float bubbleFastVelocity = 10f;
+    public float bubbleFastVelocity = 12f;
     private bool bubbleCooldown;
     private bool cantShoot;
     public float chargeTime = 2f;
