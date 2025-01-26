@@ -17,6 +17,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
+
         openLevels.Select();
 
         int levels = PlayerPrefs.HasKey("level") ? PlayerPrefs.GetInt("level") : 0;
