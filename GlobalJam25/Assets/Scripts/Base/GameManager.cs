@@ -87,8 +87,18 @@ public class GameManager : MonoBehaviour
     public void LoadNextLevel()
     {
         int index = SceneManager.GetActiveScene().buildIndex;
-        if (index == 1) SceneManager.LoadScene(2);
-        else if (index == 2) SceneManager.LoadScene(3);
+        if (index == 1)
+        {
+            PlayerPrefs.SetInt("level", 1);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene(2);
+        }
+        else if (index == 2)
+        {
+            PlayerPrefs.SetInt("level", 2);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene(3);
+        }
         else SceneManager.LoadScene(0);
     }
 }
