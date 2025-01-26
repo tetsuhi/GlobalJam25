@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         CheckGround();
 
-        if (uncontrollable) return;
+        if (uncontrollable || Time.timeScale == 0) return;
 
         direction = new Vector2(
             Input.GetAxisRaw("Horizontal") > 0.1f ? 1 : (Input.GetAxisRaw("Horizontal") < -0.1f ? -1 : 0),

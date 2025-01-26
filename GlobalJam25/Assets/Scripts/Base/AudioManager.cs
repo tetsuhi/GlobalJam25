@@ -60,6 +60,7 @@ public class AudioManager : MonoBehaviour
         soundMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("Sound", volume);
         PlayerPrefs.Save();
+        PlayClick();
     }
 
     public void PlayClick()

@@ -9,16 +9,31 @@ public class GameManager : MonoBehaviour
     public Image[] hpIcons;
     public Sprite[] hpStatus;
 
+    public Button closeButton;
+
     public int currentHp;
 
     private PlayerController playerController;
 
+    private bool pause;
+
     private void Start()
     {
+        Time.timeScale = 1;
+
         UpdateHp(6);
         playerController = FindFirstObjectByType<PlayerController>();
 
         if(SceneManager.GetActiveScene().buildIndex == 3) playerController.ActivePowerUp1();
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Pause"))
+        {
+            if(pause) CloseSettings();
+            else OpenSettings();
+        }
     }
 
     public void QuitGame()
@@ -31,12 +46,17 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.instance.PlayClick();
         settingsMenu.SetActive(true);
+        Time.timeScale = 0;
+        closeButton.Select();
+        pause = true;
     }
 
     public void CloseSettings()
     {
         AudioManager.instance.PlayClick();
         settingsMenu.SetActive(false);
+        Time.timeScale = 1;
+        pause = false;
     }
 
     public void UpdateHp(int x)
