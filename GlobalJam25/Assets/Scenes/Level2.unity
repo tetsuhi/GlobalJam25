@@ -732,8 +732,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d6572514ca15ea4489093cdf3af06cc, type: 2}
+  m_sharedMaterial: {fileID: 501529285602664000, guid: 7d6572514ca15ea4489093cdf3af06cc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6135,15 +6135,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d6572514ca15ea4489093cdf3af06cc, type: 2}
+  m_sharedMaterial: {fileID: 501529285602664000, guid: 7d6572514ca15ea4489093cdf3af06cc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -87955,15 +87955,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Close
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d6572514ca15ea4489093cdf3af06cc, type: 2}
+  m_sharedMaterial: {fileID: 501529285602664000, guid: 7d6572514ca15ea4489093cdf3af06cc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -89796,8 +89796,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sound
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d6572514ca15ea4489093cdf3af06cc, type: 2}
+  m_sharedMaterial: {fileID: 501529285602664000, guid: 7d6572514ca15ea4489093cdf3af06cc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -90119,17 +90119,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 587309963}
   m_SourcePrefab: {fileID: 100100000, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
---- !u!114 &1472580118 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 525760197324958214, guid: 04e82ddb493bc2449bc831dc453acdea, type: 3}
-  m_PrefabInstance: {fileID: 1472580117}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 587309961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e39a26bbabf286c479311d5bd63c8ad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1502764481
 GameObject:
   m_ObjectHideFlags: 0
@@ -91133,8 +91122,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pause
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d6572514ca15ea4489093cdf3af06cc, type: 2}
+  m_sharedMaterial: {fileID: 501529285602664000, guid: 7d6572514ca15ea4489093cdf3af06cc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -91622,7 +91611,6 @@ MonoBehaviour:
   - {fileID: 7969752024136316262, guid: 1870215357af7f24785be2115a03beac, type: 3}
   closeButton: {fileID: 1215412638}
   currentHp: 0
-  playerController: {fileID: 1472580118}
 --- !u!114 &1841030397
 MonoBehaviour:
   m_ObjectHideFlags: 0
