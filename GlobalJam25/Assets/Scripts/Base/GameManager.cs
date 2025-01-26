@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
     {
         currentHp = Mathf.Clamp(currentHp + x, 0 , 6);
 
+        if(currentHp == 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
         int aux = currentHp;
 
         foreach (var hp in hpIcons)
