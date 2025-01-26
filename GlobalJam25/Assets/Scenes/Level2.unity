@@ -91857,12 +91857,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 79ea0cbee7c347d44ab1c5768fa5265c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 062a5b6bd03b96445b3a1c6784cff7ba, type: 3}
-  m_Resource: {fileID: 8300000, guid: 062a5b6bd03b96445b3a1c6784cff7ba, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5a47568c48616644788c2ab97cfe47b9, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5a47568c48616644788c2ab97cfe47b9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
