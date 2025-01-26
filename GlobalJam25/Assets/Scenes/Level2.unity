@@ -3618,7 +3618,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 10}
+  m_Size: {x: 0.4, y: 10}
   m_EdgeRadius: 0
 --- !u!4 &469587318
 Transform:
@@ -3696,7 +3696,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 20}
+  m_Size: {x: 0.4, y: 20}
   m_EdgeRadius: 0
 --- !u!4 &532325787
 Transform:
@@ -4039,7 +4039,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 10}
+  m_Size: {x: 0.4, y: 10}
   m_EdgeRadius: 0
 --- !u!4 &601212719
 Transform:
@@ -4196,7 +4196,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 10}
+  m_Size: {x: 0.4, y: 10}
   m_EdgeRadius: 0
 --- !u!4 &614226575
 Transform:

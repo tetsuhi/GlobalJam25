@@ -29,8 +29,10 @@ public class PlayerController : MonoBehaviour
     public float bubbleSlowVelocity = 2.5f;
     public float bubbleFastVelocity = 10f;
     private bool bubbleCooldown;
+    private bool cantShoot;
     public float chargeTime = 2f;
     public bool chargeShoot;
+    private Coroutine chargeCorutine;
 
     public bool powerUp1;
     public bool powerUp2;
@@ -87,12 +89,18 @@ public class PlayerController : MonoBehaviour
         {
             if(Input.GetButtonDown("Fire1") && !bubbleCooldown)
             {
-                StartCoroutine(ChargeBubble());
+                chargeCorutine = StartCoroutine(ChargeBubble());
             }
             else if(Input.GetButtonUp("Fire1") && !bubbleCooldown)
             {
                 ShootBubble(chargeShoot);
-                StopAllCoroutines();
+
+                if(chargeCorutine != null)
+                {
+                    StopCoroutine(chargeCorutine);
+                    chargeCorutine = null;
+                }
+
                 gunSr.sprite = gun1;
                 chargeShoot = false;
             }
@@ -182,10 +190,12 @@ public class PlayerController : MonoBehaviour
 
     private void ShootBubble(bool charge)
     {
+        AudioManager.instance.PlayBubble();
+
+        if (cantShoot) return;
+
         bubbleCooldown = true;
         Invoke("BubbleReady", 0.4f);
-
-        AudioManager.instance.PlayBubble();
 
         GameObject bubbleGO = charge ? bigBubble : smallBubble;
 
@@ -302,6 +312,19 @@ public class PlayerController : MonoBehaviour
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, bubbleForce);
                 AudioManager.instance.PlayJump();
             }
+        }
+
+        if (collision.CompareTag("BubbleBreak"))
+        {
+            cantShoot = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("BubbleBreak"))
+        {
+            cantShoot = false;
         }
     }
 

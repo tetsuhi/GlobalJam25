@@ -107,6 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6474401459500814618}
   - component: {fileID: 8825490514582275579}
+  - component: {fileID: 6507169421055398907}
   m_Layer: 8
   m_Name: Bubble
   m_TagString: Untagged
@@ -184,6 +185,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6507169421055398907
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568196836746180944}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b73c677f4377c64f9af72ba71fe36cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6844859903708531803
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +261,8 @@ MonoBehaviour:
   speed: 2
   trapped: 0
   bubbleSP: {fileID: 8825490514582275579}
+  bubbleAnimator: {fileID: 6507169421055398907}
+  bigEnemy: 0
 --- !u!212 &3103146525743076935
 SpriteRenderer:
   m_ObjectHideFlags: 0

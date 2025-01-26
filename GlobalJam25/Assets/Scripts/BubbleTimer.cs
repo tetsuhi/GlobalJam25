@@ -28,6 +28,11 @@ public class BubbleTimer : MonoBehaviour
                 DestroyAnim();
             }
         }
+
+        if (collision.CompareTag("BubbleBreak"))
+        {
+            DestroyBubble();
+        }
     }
 
     public void DestroyAnim()

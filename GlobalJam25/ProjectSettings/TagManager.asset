@@ -9,6 +9,7 @@ TagManager:
   - Flag
   - PowerUp1
   - PowerUp2
+  - BubbleBreak
   layers:
   - Default
   - TransparentFX
